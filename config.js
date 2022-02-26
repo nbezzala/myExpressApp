@@ -1,7 +1,7 @@
 const config = {};
 
-config.host = process.env.host || 'https://ajnabee-db.documents.azure.com:443/'
-config.authKey = process.env.authKey || 'gyDFSXodPHrR1JvSKu8sREUxt3vxBdZmOacMAuMVgzdNmJwskQLDU45SPOOMpliTGlHq15ldxPjmKzUAbRF5NA=='
+config.host = process.env.host || '';
+config.authKey = process.env.authKey || '';
 
 config.databaseId = "AppDB"
 config.containerId = "articles"
