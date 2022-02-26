@@ -6,12 +6,15 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var blogRouter = require('./routes/blog');
+var fortuneRouter = require('./routes/fortunes');
 
 var app = express();
 
+var env = require('dotenv').config();
+
 // mongoose setup
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb://ajnabee-mongodb:ycdNOxFywhG2IPCXdp9TLPzPt3RKBFpxT7L4JgaZnKAROEizr8P6hZl7Li2Ni0Cy1N02Aau1ORNCCcyOHFJ1eQ==@ajnabee-mongodb.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@ajnabee-mongodb@';
+const mongoDB = process.env.mongoDB;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind('console', 'MongoDB connection error: '));
@@ -28,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/blog', blogRouter);
+app.use('/fortune', fortuneRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
