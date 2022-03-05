@@ -10,8 +10,9 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource - blog');
 });
 
-router.get('/users/', user_controller.user_list);
+router.get('/users', user_controller.user_list);
 router.get('/articles', article_controller.article_list);
+router.get('/category/:categoryId/articles', article_controller.category_articles);
 
 
 module.exports = router;

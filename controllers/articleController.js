@@ -5,4 +5,8 @@ exports.article_list = async function(req, res) {
   res.json(articles)
 }
 
-
+exports.category_articles = async function(req, res) {
+  const categoryId = req.params.categoryId;
+  let articles = await Article.find({categoryId});
+  res.json(articles)
+}

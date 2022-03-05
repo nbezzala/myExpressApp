@@ -11,6 +11,7 @@ const ArticleSchema = new Schema(
     created_date: {type: Date, default: Date.now },
     modified_date: {type: Date, default: Date.now },
     modified_by: {type: Schema.Types.ObjectId, ref: 'User', required: true},
+    categoryId: {type: Schema.Types.ObjectId, ref: 'Category', required: true},
     meta: {
       votes:  Number,
       favs:   Number,
