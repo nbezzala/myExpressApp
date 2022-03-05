@@ -16,3 +16,7 @@ exports.category_articles = async function(req, res) {
   let articles = await Article.find({categoryId: categoryId});
   res.json(articles)
 }
+
+exports.create_category_get = async function(req, res) {
+  
+}

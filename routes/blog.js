@@ -14,6 +14,6 @@ router.get('/users', user_controller.user_list);
 router.get('/articles', article_controller.article_list);
 router.get('/categories', article_controller.categories)
 router.get('/category/:categoryId/articles', article_controller.category_articles);
-
+router.get('/category/create', article_controller.create_category_get);
 
 module.exports = router;
