@@ -32,7 +32,7 @@ exports.create_category_post = [
     if(errors.isEmpty) {
       category.save(function(err) {
         if(err) { return next(err);}
-        res.redirect()
+        res.redirect(category.url)
       })
 
     } else {
