@@ -9,7 +9,7 @@ const CategorySchema = new Schema(
     image: String,
     created_date: {type: Date, default: Date.now },
     modified_date: {type: Date, default: Date.now },
-    modified_by: {type: Schema.Types.ObjectId, ref: 'User', required: true},
+    modified_by: {type: Schema.Types.ObjectId, ref: 'User'},
     meta: {
       votes:  Number,
       favs:   Number,
