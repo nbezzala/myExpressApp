@@ -27,22 +27,14 @@ exports.create_category_post = [
   body('description', 'Category description required').trim().isLength({min: 1}).escape(),
 
   (req, res, next) => {
-    console.log("Name: " + req.body.name)
-    console.log("Description: " + req.body.description)
-    console.log("Image: " + req.body.image)
     const errors = validationResult(req);
-    console.log("Errors: " + errors)
     
     let category = new Category({
       name: req.body.name,
       description: req.body.description,
       image: req.body.image
     });
-    console.log("Category: " + category)
-//    return res.json(req.body)
-    return res.json(category);
 
-/*
     if(errors.isEmpty) {
       category.save(function(err) {
         if(err) { return next(err);}
@@ -53,7 +45,6 @@ exports.create_category_post = [
       res.render('category_form', {title: 'Create Category', category: category, errors: errors.array()});
       return;
     }
-  */
 
   }
 ];
