@@ -27,7 +27,9 @@ exports.create_category_post = [
   body('description', 'Category description required').trim().isLength({min: 1}).escape(),
 
   (req, res, next) => {
-    console.log("Parameters: " + req.params)
+    console.log("Name: " + req.params.name)
+    console.log("Description: " + req.params.description)
+    console.log("Image: " + req.params.image)
     const errors = validationResult(req);
     console.log("Errors: " + errors)
     
@@ -37,8 +39,8 @@ exports.create_category_post = [
       image: req.params.image
     });
     console.log("Category: " + category)
-    res.json(category);
-    return;
+    return res.json(req.params)
+    //return res.json(category);
 
 /*
     if(errors.isEmpty) {
