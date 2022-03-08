@@ -38,7 +38,9 @@ exports.create_category_post = [
     });
     console.log("Category: " + category)
     res.json(category);
+    return;
 
+/*
     if(errors.isEmpty) {
       category.save(function(err) {
         if(err) { return next(err);}
@@ -49,6 +51,7 @@ exports.create_category_post = [
       res.render('category_form', {title: 'Create Category', category: category, errors: errors.array()});
       return;
     }
+  */
 
   }
 ];
