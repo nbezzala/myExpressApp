@@ -24,13 +24,13 @@ exports.create_category_get = async function(req, res) {
 
 exports.create_category_post = [
   body('name', 'Category name required').trim().isLength({min: 1}).escape(),
-  body('description', 'Category name required').trim().isLength({min: 1}).escape(),
+  body('description', 'Category description required').trim().isLength({min: 1}).escape(),
 
   (req, res, next) => {
-    res.json(req.params);
     console.log(req)
     const errors = validationResult(req);
     console.log(errors)
+    res.json(req)
     let category = new Category({
       name: req.params.name,
       description: req.params.description,
