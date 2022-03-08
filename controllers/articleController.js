@@ -12,10 +12,11 @@ exports.categories = async function(req, res) {
   res.json(categories);
 }
 
+// Show Category and a list of it's articles here
 exports.category_articles = async function(req, res) {
   const categoryId = req.params.categoryId;
-  let articles = await Article.find({categoryId: categoryId});
-  res.json(articles)
+  let category = await Category.findOne({categoryId});
+  res.json(category)
 }
 
 exports.create_category_get = async function(req, res) {

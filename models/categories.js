@@ -7,6 +7,7 @@ const CategorySchema = new Schema(
     description:  {type: String, required: true},
     tagline: String, 
     image: String,
+    private: {type: Boolean, default: false},
     created_date: {type: Date, default: Date.now },
     modified_date: {type: Date, default: Date.now },
     modified_by: {type: Schema.Types.ObjectId, ref: 'User'},
