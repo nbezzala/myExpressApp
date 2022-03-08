@@ -27,10 +27,10 @@ exports.create_category_post = [
   body('description', 'Category description required').trim().isLength({min: 1}).escape(),
 
   (req, res, next) => {
-    console.log(req)
+    console.log(req.params)
     const errors = validationResult(req);
     console.log(errors)
-    res.json(req)
+    res.json(req.params)
     let category = new Category({
       name: req.params.name,
       description: req.params.description,
