@@ -30,7 +30,7 @@ exports.create_category_post = [
     console.log(req.params)
     const errors = validationResult(req);
     console.log(errors)
-    res.json(req.params)
+    
     let category = new Category({
       name: req.params.name,
       description: req.params.description,
