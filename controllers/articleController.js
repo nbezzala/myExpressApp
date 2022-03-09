@@ -23,6 +23,17 @@ exports.create_category_get = async function(req, res) {
   res.render('category_form', {title: 'Create Category'});
 }
 
+exports.category_update_get = async function(req, res) {
+
+  let category = Category.findById(req.params.id);
+  res.render('category_form', 
+    {
+      title: 'Update Category' + category.name, 
+      category: category
+  });
+
+}
+
 exports.create_category_post = [
   body('name', 'Category name required').trim().isLength({min: 1}).escape(),
   body('description', 'Category description required').trim().isLength({min: 1}).escape(),
