@@ -19,7 +19,7 @@ const adminJS = new AdminJS({
 });
 const router = AdminJSExpress.buildRouter(adminJS);
 app.use(adminJS.options.rootPath, router)
-app.listen(8080, () => console.log('AdminJS is under localhost:8080/admin'))
+//app.listen(8080, () => console.log('AdminJS is under localhost:8080/admin'))
 
 
 
