@@ -25,7 +25,7 @@ const AdminJSExpress = require('@adminjs/express');
 const AdminJSMongoose = require('@adminjs/mongoose');
 AdminJS.registerAdapter(AdminJSMongoose);
 const adminJS = new AdminJS({
-    databases: [mongoDB],
+    databases: [],
     rootPath: '/admin'
 });
 const router = AdminJSExpress.buildRouter(adminJS);
