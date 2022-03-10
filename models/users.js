@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const CategorySchema = require('./categories');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema (
@@ -10,7 +9,9 @@ const UserSchema = new Schema (
     created_date: {type: Date},
     modified_date:  {type: Date},
     description: {type: String},
-    liked_categories: [CategorySchema]
+    liked_categories: [
+      { type: Schema.Types.ObjectId, ref: 'CategorySchema' }
+    ]
   }
 );
 
