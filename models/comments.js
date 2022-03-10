@@ -8,11 +8,9 @@ const CommentSchema = new Schema(
     created_date: {type: Date, default: Date.now },
     modified_date: {type: Date, default: Date.now },
     modified_by: {type: Schema.Types.ObjectId, ref: 'User'},
-    parentId: {type: Schema.Types.ObjectId, ref: 'Article', required: true},
-    meta: {
-      votes:  Number,
-      favs:   Number,
-    }
+    parentId: {type: Schema.Types.Mixed}, // Article or another Comment
+    numLikes: Number,
+    numDislikes: Number
   }
 );
 

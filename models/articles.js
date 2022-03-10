@@ -12,10 +12,7 @@ const ArticleSchema = new Schema(
     modified_date: {type: Date, default: Date.now },
     modified_by: {type: Schema.Types.ObjectId, ref: 'User'},
     categoryId: {type: Schema.Types.ObjectId, ref: 'Category', required: true},
-    meta: {
-      votes:  Number,
-      favs:   Number,
-    }
+    numLikes: Number
   }
 );
 
