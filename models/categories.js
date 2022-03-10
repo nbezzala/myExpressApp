@@ -24,8 +24,6 @@ CategorySchema
     return '/blog/category/' + this.id
   })
 
-module.exports = {
-  Category: mongoose.model('Category', CategorySchema),
-  CategorySchema: CategorySchema
-};
+module.exports = mongoose.model('Category', CategorySchema);
+  
 
