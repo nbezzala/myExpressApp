@@ -12,7 +12,7 @@ var fortuneRouter = require('./routes/fortunes');
 const app = express();
 
 const AdminJS = require('adminjs');
-const AdminJSExpress = require('@amdinjs/express');
+const AdminJSExpress = require('@adminjs/express');
 const adminJS = new AdminJS({
     databases: [],
     rootPath: '/admin'
