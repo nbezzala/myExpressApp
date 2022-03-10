@@ -8,13 +8,24 @@ var blogRouter = require('./routes/blog');
 var fortuneRouter = require('./routes/fortunes');
 
 
+const env = require('dotenv').config();
+
+// mongoose setup
+const mongoose = require('mongoose');
+const mongoDB = process.env.mongoDB;
+mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
+var db = mongoose.connection;
+db.on('error', console.error.bind('console', 'MongoDB connection error: '));
+
 
 const app = express();
 
 const AdminJS = require('adminjs');
 const AdminJSExpress = require('@adminjs/express');
+const AdminJSMongoose = require('@adminjs/mongoose');
+AdminJS.registerAdapter(AdminJSMongoose);
 const adminJS = new AdminJS({
-    databases: [],
+    databases: [mongoDB],
     rootPath: '/admin'
 });
 const router = AdminJSExpress.buildRouter(adminJS);
@@ -23,14 +34,6 @@ app.use(adminJS.options.rootPath, router)
 
 
 
-var env = require('dotenv').config();
-
-// mongoose setup
-const mongoose = require('mongoose');
-const mongoDB = process.env.mongoDB;
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
-var db = mongoose.connection;
-db.on('error', console.error.bind('console', 'MongoDB connection error: '));
 
 
 // view engine setup
