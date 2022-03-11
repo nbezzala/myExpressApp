@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "@adminjs/express": "4.1.0",
-    "@adminjs/mongoose": "2.0.2",
     "@azure/cosmos": "^3.15.1",
     "adminjs": "5.7.3",
     "async": "^3.2.3",

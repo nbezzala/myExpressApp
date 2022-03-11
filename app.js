@@ -22,7 +22,7 @@ const app = express();
 
 const AdminJS = require('adminjs');
 const AdminJSExpress = require('@adminjs/express');
-const AdminJSMongoose = require('@adminjs/mongoose');
+//const AdminJSMongoose = require('@adminjs/mongoose');
 AdminJS.registerAdapter(AdminJSMongoose);
 const adminJS = new AdminJS({
     databases: [],
